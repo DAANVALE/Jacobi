@@ -8,10 +8,6 @@ package daan.jacobi;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- * @author Sanja
- */
 public class Jacobi {    
     public static void main(String[] args) {
         System.out.println("Hello World!");
