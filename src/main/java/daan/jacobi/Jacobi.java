@@ -10,12 +10,16 @@ import java.util.Set;
 
 public class Jacobi {    
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        int a = 0, b = 0, c = 0;
         
-        int a = 0;
-        int b = 0;
-        double [] definido = {0,0,0};
+        //{{6,2,1,22},{-1,8,2,30},{1,-1,6,23}};
+        //{{10,1,2,3},{4,6,-1,9},{-2,3,8,51}};
+        
         double [][]matriz = {{6,2,1,22},{-1,8,2,30},{1,-1,6,23}};
+        double [] definido = new double[matriz.length];
+        
+        System.out.println(" ---------------------- ITERACION NRO: " + (b++));
+        while(c != definido.length){definido[c] = 0; System.out.println((c+1) + "n : " + definido[c]); c++;}
         
         do{ 
             System.out.println(" ---------------------- ITERACION NRO: " + (b++));
