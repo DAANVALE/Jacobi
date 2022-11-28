@@ -20,10 +20,11 @@ public class Calculadora {
             for(int j = 0; j < matriz[0].length; j++){
                 if(i != j){
                     if(j != matriz[0].length - 1){
-                        temporal[i] += (matriz[i][j] * definido[j]) / valor[i];
+                        temporal[i] = temporal[i] + ((matriz[i][j] * (-definido[j])) / valor[i]);
+                        //System.out.print("temp " + (matriz[i][j] * definido[j]) / valor[i] + "\n");
+                        //System.out.print("suma " + temporal[i] + "\n");
                     }else{
-                        temporal[i] =+ matriz[i][j] / valor[i];
-                        System.out.println("obtenido");
+                        temporal[i] = temporal[i] + (matriz[i][j] / valor[i]);
                     }     
                 }
             }
