@@ -28,6 +28,7 @@ public class Jacobi {
                 matriz[i][j] = Double.parseDouble(sc.next());
             }
         }
+        
         //{{6,2,1,22},{-1,8,2,30},{1,-1,6,23}};
         //{{10,1,2,3},{4,6,-1,9},{-2,3,8,51}};
         //Calculadora call = new Calculadora();
@@ -35,9 +36,28 @@ public class Jacobi {
         //double [][]matriz = call.Tamano_Matriz();
         //matriz = call.IngresarMatriz(matriz);
         double [] definido = new double[matriz.length];
+        double [] temporal = new double[matriz.length];
         int imprimir = 0;
         
         while(c != definido.length){definido[c] = 0; c++;}
+        
+        //burbuja
+        
+        Calculadora imp = new Calculadora(matriz,definido);     
+        System.out.print("--------- Matriz ingresada ---------- \n");
+        imp.Imprimir_Matriz();
+        
+        for(int row = 0; row < matriz.length; row++){
+            for(int column = 0; column < matriz.length; column++){
+                if(row != column){
+                    if(matriz[row][row] <= matriz[column][row]){
+                        temporal = matriz[row];
+                        matriz[row] = matriz[column];
+                        matriz[column] = temporal;
+                    }
+                }
+            }
+        }
         
         do{
             
@@ -45,10 +65,8 @@ public class Jacobi {
                        
             Calculadora cal = new Calculadora(matriz,definido);     
             
-            System.out.println("fila" + matriz.length);
-            System.out.println("columna" + matriz[0].length);
-            
             if(imprimir == 0){
+                System.out.print("--------- Matriz corregida ---------- \n");
                 cal.Imprimir_Matriz();
             }
 
@@ -69,7 +87,7 @@ public class Jacobi {
                 }
             }
             
-        }while(a != definido.length);
+        }while(a != definido.length && b != 100);
         
             System.out.println("\n");
     }
