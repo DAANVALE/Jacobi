@@ -24,7 +24,9 @@ public class Jacobi {
         
         System.out.println("Ingrese los valores de la matriz");
         for(int i=0; i<matriz.length; i++){
+            System.out.print("------  Linea: " + (i+1) + "----- \n");
             for(int j=0; j<matriz[i].length; j++){
+                System.out.print((j+1) + "n: ");
                 matriz[i][j] = Double.parseDouble(sc.next());
             }
         }
@@ -50,7 +52,7 @@ public class Jacobi {
         for(int row = 0; row < matriz.length; row++){
             for(int column = 0; column < matriz.length; column++){
                 if(row != column){
-                    if(matriz[row][row] <= matriz[column][row] || matriz[row][row] == 0){
+                    if(matriz[row][row] <= matriz[column][row] || matriz[row][row] != 0){
                         temporal = matriz[row];
                         matriz[row] = matriz[column];
                         matriz[column] = temporal;
