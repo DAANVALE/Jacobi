@@ -50,7 +50,7 @@ public class Jacobi {
         for(int row = 0; row < matriz.length; row++){
             for(int column = 0; column < matriz.length; column++){
                 if(row != column){
-                    if(matriz[row][row] <= matriz[column][row]){
+                    if(matriz[row][row] <= matriz[column][row] || matriz[row][row] == 0){
                         temporal = matriz[row];
                         matriz[row] = matriz[column];
                         matriz[column] = temporal;
