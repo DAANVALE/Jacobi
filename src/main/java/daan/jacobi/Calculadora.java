@@ -31,6 +31,26 @@ public class Calculadora {
         }
     }
     
+    public void Imprimir_Matriz(){
+    
+        String[] linea = new String[matriz.length]; 
+        
+        int i,j;
+        for(i = 0; i < matriz.length; i++){
+            
+            linea[i] = " ";
+            
+            for(j = 0; j < matriz[1].length; j++){
+                linea[i] = linea[i] + matriz[i][j] + "n" + (i+1) + (j+1) + "     ";
+            }
+        }
+        
+        for(i = 0; i < matriz.length; i++){
+            System.out.print(linea[i]);
+            System.out.print(" \n ---- \n");
+        }
+    }
+    
     public void setMatriz(double[][] matriz){
         this.matriz = matriz;
     }

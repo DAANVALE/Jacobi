@@ -17,17 +17,25 @@ public class Jacobi {
         
         double [][]matriz = {{6,2,1,22},{-1,8,2,30},{1,-1,6,23}};
         double [] definido = new double[matriz.length];
+        int imprimir = 0;
         
-        System.out.println(" ---------------------- ITERACION NRO: " + (b++));
-        while(c != definido.length){definido[c] = 0; System.out.println((c+1) + "n : " + definido[c]); c++;}
+        while(c != definido.length){definido[c] = 0; c++;}
         
-        do{ 
-            System.out.println(" ---------------------- ITERACION NRO: " + (b++));
+        do{
             
             a = 0;
+                       
+            Calculadora cal = new Calculadora(matriz,definido);     
             
-            Calculadora cal = new Calculadora(matriz,definido);       
-        
+            if(imprimir == 0){
+                cal.Imprimir_Matriz();
+            }
+
+            imprimir++;
+            
+            b++;
+            System.out.print("--------- Iteracion " +  b + "---------- \n");
+            
             for(int j = 0; j < cal.getTemp().length; j++){
                 System.out.println((j+1) + "n : " + cal.getTemp()[j] + " ");
             }
