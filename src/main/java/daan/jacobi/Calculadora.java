@@ -1,9 +1,11 @@
 
 package daan.jacobi;
+//import java.util.Scanner;
 
 public class Calculadora {
     double[][] matriz;
     double[] definido, temporal, valor;
+    //Scanner sc = new Scanner(System.in);
     
     public Calculadora(){
     }
@@ -30,6 +32,28 @@ public class Calculadora {
             }
         }
     }
+    
+    /*public double[][] Tamano_Matriz(){
+        double[][] Matr;
+        System.out.println("Ingrese el tamano de la matriz");
+        String datosIngresados = sc.next();
+        String[] datos = datosIngresados.split("&");
+        int filas = Integer.parseInt(datos[0]);
+        int columnas = Integer.parseInt(datos[1]);
+        
+        Matr = new double[filas][columnas];
+        return Matr;
+    }*/ 
+    
+    /*public double[][] IngresarMatriz(double[][] Matr){
+        System.out.println("Ingrese los valores de la matriz");
+        for(int i=0; i<matriz.length; i++){
+            for(int j=0; j<matriz[i].length; j++){
+                Matr[i][j] = Double.parseDouble(sc.next());
+            }
+        }
+          return Matr;  
+    }*/
     
     public void Imprimir_Matriz(){
     

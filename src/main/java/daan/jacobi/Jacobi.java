@@ -7,15 +7,33 @@ package daan.jacobi;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Scanner;
 
 public class Jacobi {    
     public static void main(String[] args) {
         int a = 0, b = 0, c = 0;
+        Scanner sc = new Scanner(System.in);
+        double[][] matriz;
+        System.out.println("Ingrese el tamano de la matriz");
+        String datosIngresados = sc.next();
+        String[] datos = datosIngresados.split("&");
+        int filas = Integer.parseInt(datos[0]);
+        int columnas = Integer.parseInt(datos[1]);
         
+        matriz = new double[filas][columnas];
+        
+        System.out.println("Ingrese los valores de la matriz");
+        for(int i=0; i<matriz.length; i++){
+            for(int j=0; j<matriz[i].length; j++){
+                matriz[i][j] = Double.parseDouble(sc.next());
+            }
+        }
         //{{6,2,1,22},{-1,8,2,30},{1,-1,6,23}};
         //{{10,1,2,3},{4,6,-1,9},{-2,3,8,51}};
+        //Calculadora call = new Calculadora();
         
-        double [][]matriz = {{6,2,1,22},{-1,8,2,30},{1,-1,6,23}};
+        //double [][]matriz = call.Tamano_Matriz();
+        //matriz = call.IngresarMatriz(matriz);
         double [] definido = new double[matriz.length];
         int imprimir = 0;
         
@@ -26,6 +44,9 @@ public class Jacobi {
             a = 0;
                        
             Calculadora cal = new Calculadora(matriz,definido);     
+            
+            System.out.println("fila" + matriz.length);
+            System.out.println("columna" + matriz[0].length);
             
             if(imprimir == 0){
                 cal.Imprimir_Matriz();
